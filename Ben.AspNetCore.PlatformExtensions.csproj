@@ -3,12 +3,22 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
+    <DevelopmentDependency>True</DevelopmentDependency>
     <RepositoryUrl>https://github.com/benaadams/Ben.AspNetCore.PlatformExtensions</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
     <PackageProjectUrl>https://github.com/benaadams/Ben.AspNetCore.PlatformExtensions</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/benaadams/Ben.AspNetCore.PlatformExtensions/blob/main/LICENSE</PackageLicenseUrl>
+    <License>Apache</License>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
-
+  
+  <ItemGroup>
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Compile Remove="Application.Async.cs" />
     <Compile Remove="Application.Sync.cs" />
